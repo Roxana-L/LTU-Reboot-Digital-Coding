@@ -1,13 +1,3 @@
-p {
-  color: blue;
-}
-em {
-  color: blueviolet;
-}
-a {
-  color: grey;
-  font-size: 18px;
-}
 header {
   border: 1px solid black;
   display: flex;
@@ -20,4 +10,18 @@ ol {
   display: flex;
   justify-content: space-evenly;
   width: 380px;
+}
+a {
+  color: grey;
+  font-size: 18px;
+}
+/* Style main section */
+main {
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 584px;
+  margin: 120px auto;
 }
