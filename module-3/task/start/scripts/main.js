@@ -194,18 +194,88 @@ for (let index = 0; index < colours.length; index++) {
   console.log(colours[index]);
 }
 
-for (let i = 0; i <= 100; i++) {
-  if (i % 3 === 0) {
-    console.log("fizz");
-  } else if (i % 5 === 0) {
-    console.log("buzz");
-  } else console.log(i);
-}
-function multiply(num, maxNum) {}
-for (let counter = 1; counter <= maxNum; counter++) {
-  let multiplyBy = num;
-  let result = counter * multiplyBy;
-  console.log(`${counter} * ${num} = ${result}`);
-}
+//for (let i = 0; i <= 100; i++) {
+//if (i % 3 === 0) {
+// console.log("fizz");
+//} else if (i % 5 === 0) {
+// console.log("buzz");
+//} else console.log(i);
+//}
+//function multiply(num, maxNum) {}
+//for (let counter = 1; counter <= maxNum; counter++) {
+//let multiplyBy = num;
+//let result = counter * multiplyBy;
+//console.log(`${counter} * ${num} = ${result}`);
+//}
 
 //multiply(8, 16);
+
+console.log(shoppingBasket[0]);
+
+//1. Create a function called totalPriceOfShopping that takes one (1) parameter, name the parameter arr - short for array
+//2. Inside the function create a variable called totalPrice and assign it the value of 0
+//3. Next create a for loop, this will loop over each object ( product )
+//4. Inside the loop write totalPrice = totalPrice +
+//5. Inside the for loop access both the price and quantity and multiply them with each other to get the price of that product
+//6. Place the result of step 5 after the + in step 4, e.g totalPrice = totalPrice + price `*` quantity
+//7. outside of the for loop but still inside the function return totalPrice
+//8. Outside of the function call the function with shoppingBasket as its argument, don't forget to console.log the result
+//- console.log( totalPriceOfShopping( shoppingBasket ) );
+// * Your output should be: 74.90
+function totalPriceOfShopping(arr) {
+  let totalPrice = 0;
+  //console.log(arr[0]);
+  for (let index = 0; index < arr.length; index++) {
+    totalPrice = totalPrice + arr[index].price * arr[index].quantity;
+    //console.log(arr[index].price * arr[index].quantity);
+  }
+  return totalPrice.toFixed(2);
+}
+console.log(totalPriceOfShopping(shoppingBasket));
+
+//1. Create a function called discountToiletries that takes one (1) parameter, name the parameter arr - short for array
+//2. Inside the function create a variable called totalPrice and assign it the value of 0
+//3. Next create a for loop, this will loop over each object ( product )
+//4. Use an if else statement to check if the product's type is === 'toiletries'
+//5. If it is then remove 50% from its price and add it to the totalPrice
+//6. Else just work out the price and add it to the totalPrice
+//7. outside of the for loop but still inside the function return totalPrice
+//8. Outside of the function call the function with shoppingBasket as its argument, don't forget to console.log the result
+//  - console.log( discountToiletries( shoppingBasket ) );
+//* Your output should be: 68.22
+
+function discountToiletries(arr) {
+  let totalPrice = 0;
+  for (let index = 0; index < arr.length; index++) {
+    if (arr[index].type === "toiletries") {
+      let discount = (arr[index].price * arr[index].quantity) / 2;
+      totalPrice =
+        totalPrice + arr[index].price * arr[index].quantity - discount;
+    } else {
+      totalPrice = totalPrice + arr[index].price * arr[index].quantity;
+    }
+  }
+  return totalPrice;
+}
+console.log(discountToiletries(shoppingBasket));
+
+function discountType(arr, type, discount) {
+  let totalPrice = 0;
+  for (let index = 0; index < arr.length; index++) {
+    if (arr[index].type === type) {
+      let discountAmount =
+        (dicount * (arr[index].price * arr[index].quantity)) / 100;
+      totalPrice =
+        totalPrice + (arr[index].price * arr[index].quantity - discountAmount);
+    } else {
+      totalPrice = totalPrice + arr[index].price * arr[index].quantity;
+    }
+  }
+  return totalPrice.toFixed(2);
+}
+console.log(discountType(shoppingBasket, "vegetables", 20));
+shoppingBasket.forEach(function (item) {
+  console.log(item);
+});
+
+shoppingBasket.forEach((item) => console.log(item));
