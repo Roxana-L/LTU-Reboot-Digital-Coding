@@ -264,7 +264,7 @@ function discountType(arr, type, discount) {
   for (let index = 0; index < arr.length; index++) {
     if (arr[index].type === type) {
       let discountAmount =
-        (dicount * (arr[index].price * arr[index].quantity)) / 100;
+        (discount * (arr[index].price * arr[index].quantity)) / 100;
       totalPrice =
         totalPrice + (arr[index].price * arr[index].quantity - discountAmount);
     } else {
@@ -273,9 +273,17 @@ function discountType(arr, type, discount) {
   }
   return totalPrice.toFixed(2);
 }
-console.log(discountType(shoppingBasket, "vegetables", 20));
-shoppingBasket.forEach(function (item) {
-  console.log(item);
-});
+//console.log(discountType(shoppingBasket, "vegetables", 20));
+//shoppingBasket.forEach(function (item) {
+//  console.log(item);
+//});
 
 shoppingBasket.forEach((item) => console.log(item));
+
+const heading1 = document.querySelector("h1");
+
+const heading4 = document.querySelector("h4");
+const paragraphs = document.querySelectorAll("p");
+for (let i = 0; i < paragraphs.length; i++) {
+  console.log((paragraphs[i].style.color = "Orange"));
+}
